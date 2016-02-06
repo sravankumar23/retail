@@ -1,0 +1,28 @@
+{% extends "/base.jinja2" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+
+    <div id="list_div">
+        <br>
+        <table border="1">
+        <th>Card_Number</th>
+        <th>State</th>
+        <th>Transactions</th>
+        {% if frauds %}
+            {% for fraud in frauds %}
+                <tr>
+                <td><a href="/web/credit_card?cc_no={{fraud.credit_card}}">{{ fraud.credit_card }}</a></td>
+                <td>{{ fraud.states }}</td>
+                <td>{{ fraud.transactions }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        </table>
+</div>
+{% endblock %}
+
+{% block tail %}
+{% endblock %}

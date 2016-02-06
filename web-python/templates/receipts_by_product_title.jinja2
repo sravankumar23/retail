@@ -1,0 +1,35 @@
+{% extends "/base.jinja2" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+      Solr Search on Receipt by product:<br>
+     <div id="solr_div">
+
+    <form action="/web/search1">
+      <input type="text" name="s">
+      <input type="submit" value="Search">
+    </form>
+    </div>
+    <div>
+        <br>
+        <table border="1">
+        <th>Product_Name</th>
+        <th>Receipt_id</th>
+        <th>Product_id</th>
+        {% if receipts %}
+            {% for receipt in receipts %}
+                <tr>
+                <td>{{ receipt.product_name }}</td>
+                <td><a href="/web/receipt?receipt_id={{receipt.receipt_id}}">{{ receipt.receipt_id }}</a></td>
+                <td><a href="/web/product?product_id={{receipt.product_id}}">{{ receipt.product_id }}</a></td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        </table>
+</div>
+{% endblock %}
+
+{% block tail %}
+{% endblock %}
