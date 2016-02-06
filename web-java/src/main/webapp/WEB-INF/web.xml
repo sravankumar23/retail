@@ -101,6 +101,7 @@
         <servlet-class>retail.controller.CreditCardServlet</servlet-class>
     </servlet>
 
+<<<<<<< HEAD
     <servlet>
         <servlet-name>ReceiptsProduct</servlet-name>
         <servlet-class>retail.controller.ReceiptsProduct</servlet-class>
@@ -111,6 +112,8 @@
         <url-pattern>/web/receiptsproduct</url-pattern>
     </servlet-mapping>
 
+=======
+>>>>>>> bf386817f6e2b520e2cf54455686cc99c11c011f
     <servlet-mapping>
         <servlet-name>CreditCardServlet</servlet-name>
         <url-pattern>/web/credit_card</url-pattern>
